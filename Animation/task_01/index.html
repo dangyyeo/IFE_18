@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task_01</title>
+    <style>
+        * {
+            text-align: center;
+            padding: 0;
+            margin: 0;   
+        }
+        p {
+            transition: color 1s;
+        }
+        span{
+            display: block;
+            margin-top: -10px;
+        }
+        span i {
+            transition: color 1s, width 0.6s;
+            display: inline-block;
+            height: 2px;
+            width: 0;
+            background-color: #4f7be1;
+        }
+        button {
+            margin-top: 20px;
+            padding: 0 6px;
+        }
+        .color {
+            color: #4f7be1;
+        }
+        .max_w {
+            width: 70px;
+        }
+    </style>
+</head>
+<body>
+    <p>前端学院</p>
+    <span><i></i></span>
+    <button onclick="changeStyle()">切换样式</button>
+    <script>
+        let pNode = document.getElementsByTagName('p')[0];
+        let iNode = document.getElementsByTagName('i')[0];
+        function changeStyle(){
+            if(hasClass(pNode,'color')){
+                pNode.removeAttribute('class','color');
+                iNode.removeAttribute('class','color max_w');
+                return ;
+            }
+            pNode.setAttribute('class','color');
+            iNode.setAttribute('class','color max_w');
+        }
+
+        function hasClass(el,cls){
+            return (' ' + el.className + ' ').indexOf(' ' + cls + ' ') > -1;
+        }
+    </script>
+</body>
+</html>
